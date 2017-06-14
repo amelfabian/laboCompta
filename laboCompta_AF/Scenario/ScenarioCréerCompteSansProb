@@ -1,0 +1,23 @@
+|-------------------------|
+|Menu logiciel comptable  |	
+|_________________________|
+|.Compte général   	      |
+|	 c.Créer			  |
+|	 m.Modifier			  |
+|	 s.supprimer		  |
+|	 l.Lister			  |  
+|						  |
+|.compte particulier	  |
+|	 c.Créer			  |
+|	 m.Modifier			  |
+|	 s.supprimer		  |
+|	 l.Lister 			  |
+|_________________________|	
+
+
+user encode 'c'
+
+entrez un numéro de compte : 123456
+(controle si valide entre 1 et 6 chiffres et n'existe pas déjà)
+nom du compte : 
+(controle si valide  
