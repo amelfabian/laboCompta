@@ -1,4 +1,4 @@
-package controle;
+package be.steformations.controle;
 
 public class ControleCompte {
 

@@ -1,4 +1,4 @@
-package model;
+package be.steformations.model;
 
 public class CompteParticulier {
 
