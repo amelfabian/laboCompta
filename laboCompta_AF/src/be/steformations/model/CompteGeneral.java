@@ -1,11 +1,12 @@
 package be.steformations.model;
 
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class CompteGeneral {
-	Scanner sc = new Scanner(System.in);
+	
+	static Scanner sc = new Scanner(System.in);
 	public CompteGeneral() {
-		System.out.println("CompteGeneral.CompteGeneral()");
 	}
 
 	public void setValid(boolean b) {
@@ -22,15 +23,22 @@ public class CompteGeneral {
 		System.out.println("le compte doit-il être subdiviser (oui/non)?: ");
 		String rep = sc.nextLine();
 		if(rep.equals("oui")){
-			System.out.println("subdivison");
+			entrerNum();
 		}else{
-			if(rep.equals("oui")){
-				System.out.println("subdivison pas");
+			if(rep.equals("non")){
+			 entrerNum();	 
 			}
 			else{
 				System.out.println("try again");
 			}
 		}
+		System.out.println("");
+	}
+	
+
+	public void entrerNum(){
+		System.out.println("Entrez un numéro de compte");
+		String num = sc.nextLine();
 	}
 
 	public void modifier() {
@@ -47,5 +55,7 @@ public class CompteGeneral {
 	System.out.println("CompteGeneral.lister()");
 		
 	}
+
+
 
 }
