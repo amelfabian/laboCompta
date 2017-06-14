@@ -17,7 +17,26 @@
 
 user encode 'c'
 
-entrez un numéro de compte : 123456
+--> entrez un numéro de compte : 123456
 (controle si valide entre 1 et 6 chiffres et n'existe pas déjà)
-nom du compte : 
-(controle si valide  
+--> nom du compte : paul dupont
+(controle si valide non null ou uniquement composé de caractere non visible)
+-->Position du compte au bilan :
+	-A 
+	-B
+	-C
+	-D
+User encode A 
+(controle si position encodée sinon en encode une par défaut ou si valide )
+--> le compte doit-il être subdiviser (oui/non)?
+( controle si oui ou non  et si numéro a moins de 6 chiffres )
+user encode 'non'
+
+Paul Dupont 1  - compte général - A - 123456  
+
+est-ce correct (o/n) ?
+user entre 'o'
+(le systeme enregistre le compte) 
+
+--> le compte a bien été enregistré !
+-----------retour menu----------------------------------------------------
