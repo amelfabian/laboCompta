@@ -1,8 +1,8 @@
 package model;
 
-public class compteParticulier {
+public class CompteParticulier {
 
-	public compteParticulier() {
+	public CompteParticulier() {
 		// TODO Auto-generated constructor stub
 	}
 

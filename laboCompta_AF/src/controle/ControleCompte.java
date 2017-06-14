@@ -1,8 +1,8 @@
 package controle;
 
-public class controleCompte {
+public class ControleCompte {
 
-	public controleCompte() {
+	public ControleCompte() {
 		// TODO Auto-generated constructor stub
 	}
 

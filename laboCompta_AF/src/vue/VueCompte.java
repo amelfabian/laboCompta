@@ -3,7 +3,7 @@ package vue;
 public class VueCompte {
 
 	public VueCompte() {
-		// TODO Auto-generated constructor stub
+		System.out.println("bonjour");// TODO Auto-generated constructor stub
 	}
 
 }
