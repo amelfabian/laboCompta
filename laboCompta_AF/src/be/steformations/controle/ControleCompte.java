@@ -1,9 +1,12 @@
 package be.steformations.controle;
 
+import be.steformations.vue.VueCompte;
+
 public class ControleCompte {
 
-	public ControleCompte() {
-		// TODO Auto-generated constructor stub
+	public static void start() {
+		System.out.println(VueCompte.getScreen());
+		
 	}
 
 }

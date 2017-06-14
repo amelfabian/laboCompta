@@ -1,12 +1,12 @@
 package be.steformations;
 
-import be.steformations.vue.VueCompte;
+import be.steformations.controle.ControleCompte;
 
 public class Main {
 
 
 	public static void main(String[] args) {
-		VueCompte.start();
+		ControleCompte.start();
 
 	}
 

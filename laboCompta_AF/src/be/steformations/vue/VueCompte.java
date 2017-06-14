@@ -9,8 +9,8 @@ public class VueCompte {
 			compteBuild = new StringBuilder();
 			compteBuild.append(String.format("Menu logiciel"));
 			compteBuild.append(String.format(System.lineSeparator()));
+			compteBuild.append(String.format("-------------------"));
 			compteBuild.append(String.format(System.lineSeparator()));
-			compteBuild.append(String.format("------------------------------------------------------------------------"));
 			compteBuild.append(String.format("compte général"));
 			compteBuild.append(String.format(System.lineSeparator()));
 			compteBuild.append(String.format(System.lineSeparator()));
@@ -26,9 +26,5 @@ public class VueCompte {
 			
 		}
 
-		public static void start() {
-			
-			
-		}
 
 }
