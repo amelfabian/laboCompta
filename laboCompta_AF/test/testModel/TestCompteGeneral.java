@@ -11,9 +11,11 @@ public class TestCompteGeneral {
 	private CompteGeneral cptgen = new CompteGeneral(); 
 
 	@Test
-	public void test() {
+	public void isSubdivisable() {
 		cptgen.setValid(true);
 		assertTrue(cptgen.isValid());
 	}
+	
+
 
 }
