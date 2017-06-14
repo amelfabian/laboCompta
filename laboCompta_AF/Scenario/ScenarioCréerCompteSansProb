@@ -17,6 +17,9 @@
 
 user encode 'c' dans compte général
 
+--> le compte doit-il être subdiviser (oui/non)?
+( controle si oui ou non  et si numéro a moins de 6 chiffres )
+user encode 'non'
 --> entrez un numéro de compte : 123456
 (controle si valide entre 1 et 6 chiffres et n'existe pas déjà)
 --> nom du compte : paul dupont
@@ -28,9 +31,7 @@ user encode 'c' dans compte général
 	-D
 User encode A 
 (controle si position encodée sinon en encode une par défaut ou si valide )
---> le compte doit-il être subdiviser (oui/non)?
-( controle si oui ou non  et si numéro a moins de 6 chiffres )
-user encode 'non'
+
 
 Paul Dupont   - compte général - A - 123456  
 
