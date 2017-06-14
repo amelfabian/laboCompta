@@ -15,24 +15,20 @@
 |_________________________|	
 
 
-user encode 'c' dans compte général
-
---> entrez un numéro de compte : 123456
-(controle si valide entre 1 et 6 chiffres et n'existe pas déjà)
+user encode 'c' dans compte particulier
+--> liste des compte généraux subdivisable en comptes particuliers
+(marqué comme subdivisable et 6 chiffres)
+--> entrez un numéro de compte à diviser: 123456
+(controle s'il est dans la liste des comptes proposé)
+--> quel est le numéro du compte: 1234
 --> nom du compte : paul dupont
 (controle si valide non null ou uniquement composé de caractere non visible)
--->Position du compte au bilan :
-	-A 
-	-B
-	-C
-	-D
-User encode A 
-(controle si position encodée sinon en encode une par défaut ou si valide )
+(si moins de 10 chiffres)
 --> le compte doit-il être subdiviser (oui/non)?
 ( controle si oui ou non  et si numéro a moins de 6 chiffres )
 user encode 'non'
 
-Paul Dupont   - compte général - A - 123456  
+Paul Dupont  - compte particulier - 1234561234  
 
 est-ce correct (o/n) ?
 user entre 'o'
