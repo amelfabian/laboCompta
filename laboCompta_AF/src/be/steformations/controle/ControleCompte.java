@@ -39,6 +39,7 @@ public class ControleCompte {
 	
 	}
 	
+	
 	public static void NewInput()
 	{
 	choice = scan.nextInt();
