@@ -41,7 +41,7 @@ public class CompteGeneral extends Compte {
 		System.out.println("Libellé :");
 		String libelle = sc.nextLine();
 		// il laisse passer les espaces et tab
-		while ((libelle.length() < 0) || (libelle.equals(null) || (libelle.isEmpty()))) {
+		while (((libelle.equals(null) || libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]") ))){
 			System.out.println("null, vide, caractères invisible :");
 			libelle = sc.nextLine();
 		}
