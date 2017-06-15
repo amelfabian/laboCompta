@@ -2,14 +2,9 @@ package be.steformations.model;
 
 public class CompteGeneralSubdivisable extends CompteGeneral{
 
-	public CompteGeneralSubdivisable(String lib) {
-		super();
+
+	public CompteGeneralSubdivisable(String numero, String libelle, char position, boolean sub) {
 		// TODO Auto-generated constructor stub
 	}
+}
 
-	private static final long serialVersionUID = 1L;
-
-
-
-
-	}

@@ -6,11 +6,9 @@ import be.steformations.model.CompteGeneral;
 import be.steformations.model.CompteParticulier;
 import be.steformations.vue.VueCompte;
 
-public class ControleCompte {
+public class Builder {
 
 	static Scanner scan = new Scanner(System.in);
-	static CompteGeneral cptgen = new CompteGeneral();
-	static CompteParticulier cptpart = new CompteParticulier();
 	
 	private static int choice;
 	
@@ -18,21 +16,21 @@ public class ControleCompte {
 		System.out.println(VueCompte.getScreen());
 		NewInput();
 		switch(choice){
-		case 1: cptgen.creer(); 
+		case 1: CompteGeneral.creer(); 
 		break;
-		case 2: cptgen.modifier();
+		case 2: CompteGeneral.modifier();
 		break;
-		case 3: cptgen.supprimer();
+		case 3: CompteGeneral.supprimer();
+		break; 
+		case 4: CompteGeneral.lister();
 		break;
-		case 4: cptgen.lister();
+		case 5: CompteParticulier.creer();
 		break;
-		case 5: cptpart.creer();
+		case 6: CompteParticulier.modifier();
 		break;
-		case 6: cptpart.modifier();
+		case 7: CompteParticulier.supprimer();
 		break;
-		case 7: cptpart.supprimer();
-		break;
-		case 8: cptpart.lister();
+		case 8: CompteParticulier.lister();
 		break;
 		default:
 		}

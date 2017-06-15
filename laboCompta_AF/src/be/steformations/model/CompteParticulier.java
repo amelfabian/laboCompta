@@ -7,19 +7,19 @@ public class CompteParticulier {
 	
 	}
 
-	public void creer() {
+	public static void creer() {
 		System.out.println("CompteParticulier.creer()");		
 	}
 
-	public void modifier() {
+	public static void modifier() {
 		System.out.println("CompteParticulier.modifier()");
 	}
 
-	public void supprimer() {
+	public static void supprimer() {
 		System.out.println("CompteParticulier.supprimer()");
 	}
 
-	public void lister() {
+	public static void lister() {
 		System.out.println("CompteParticulier.lister()");
 	}
 

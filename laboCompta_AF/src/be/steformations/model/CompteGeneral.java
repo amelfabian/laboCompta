@@ -1,111 +1,81 @@
 package be.steformations.model;
 
-import java.io.Serializable;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
-public class CompteGeneral extends Compte implements Serializable {
+public class CompteGeneral extends Compte {
 
-	private static final long serialVersionUID = 1L;
 	static Scanner sc = new Scanner(System.in);
-	static String rep;
-	static Character cara;
 
+	private static boolean sub = false;
+	private static String numero = "";
+	char position = ' ';
+
+	public static void creer() {
+
+		System.out.println("Le compte doit-il être subdivisé (O/N) ? :");
+		Character tmp = sc.nextLine().charAt(0);
+
+		while (!((Character.toUpperCase(tmp) == 'O') || (Character.toUpperCase(tmp) == 'N'))) {
+			System.out.println("(O/N) ? :");
+			tmp = sc.nextLine().charAt(0);
+
+		}
+		if (tmp == 'o' || tmp == 'O') {
+			sub = true;
+		}
+
+		System.out.println("Quel est le numéro du compte :");
+		numero = sc.nextLine();
+		while (!(numero.matches("[0-9]+")) && (numero.length() <= 6 || numero.length() > 0)) {
+			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
+			numero = sc.nextLine();
+		}
+
+		while (!sub && numero.length() < 6) {
+			numero = numero + "0";
+		}
+
+		System.out.println("Libellé :");
+		String libelle = sc.nextLine();
+		// il laisse passer les espaces et tab
+		while ((libelle.length() < 0) || (libelle.equals(null) || (libelle.isEmpty()))) {
+			System.out.println("null, vide, caractères invisible :");
+			libelle = sc.nextLine();
+		}
+
+		System.out.println("Position bilan (a/b/c/d) :");
+		char position = sc.nextLine().charAt(0);
+
+		System.out.println("Vos choix :");
+		System.out.println("Création d'un compte général.");
+		System.out.println("\t" + "Numero : " + numero);
+		System.out.println("\t" + "Libellé : " + libelle);
+		System.out.println("\t" + "Position dans le bilan : " + position);
+		System.out.println("\t" + "subdivisible : " + sub);
+		System.out.println("Confirmer (O/N) :");
+		char confirme = sc.nextLine().charAt(0);
+		if (confirme == 'O') {
+			ListeComptesGenereau.addToList(numero, libelle, position, sub);
+			System.out.println("le compte a été créé avec succès.");
+
+		}
+	}
+
+	public static void lister() {
+		// TODO Auto-generated method stub
 		
-
-	public Boolean Subdivisable(String string) {
-
-		boolean valid = false;
-
-		if ((string.length() == 6 && string.matches("[0-9]+"))) {
-			valid = true;
-		}
-		return valid;
-
 	}
 
-	public void creer() {
-
-		System.out.println("le compte doit-il être subdiviser (oui/non)?: ");
-		rep = sc.nextLine();
-		do {
-
-			if (rep.equals("oui")) {
-
-				newInput();
-				break;
-			} else {
-				if (rep.equals("non")) {
-					newInput();
-					break;
-				} else {
-					System.out.println("try again");
-					System.out.println("le compte doit-il être subdiviser (oui/non)?: ");
-					rep = sc.nextLine();
-				}
-			}
-
-		} while (!(rep.equals("oui")) && (!(rep.equals("oui"))));
-
+	public static void supprimer() {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public void newInput() {
-		System.out.println("Entrez un numéro de compte: ");
-		rep = sc.nextLine();
-		{
-			if (Subdivisable(rep))
-				System.out.println("Entrez un nom: ");
-			rep = sc.nextLine();
-			libele(rep);
-		}
-
+	public static void modifier() {
+		// TODO Auto-generated method stub
+		
 	}
-
-	public char position() {
-		System.out.println("Position du compte au bilan: ");
-		rep = sc.nextLine();
-		cara = rep.charAt(0);
-		if (positionIsValid(cara)) {
-			enregistrement();
-		} else {
-			cara = 'a';
-		}
-		return cara;
-
-	}
-
-	public void enregistrement() {
-		System.out.println("souhaitez vous enregistrer?");
-	}
-
-	public boolean positionIsValid(Character caract) {
-		boolean valid = false;
-		if (caract.equals('a') || caract.equals('b') || cara.equals('c') || cara.equals('d')) {
-			caract.toString();
-			valid = true;
-		}
-
-		return valid;
-
-	}
-
-	public String libele(String string) {
-		if (!(string.equals(null)) && !(string.isEmpty())) {
-			position();
-		}
-		return string;
-
-	}
-
-	public void modifier() {
-
-	}
-
-	public void supprimer() {
-
-	}
-
-	public void lister() {
-
-	}
-
 }
