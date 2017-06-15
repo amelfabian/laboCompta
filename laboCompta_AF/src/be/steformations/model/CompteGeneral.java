@@ -29,7 +29,7 @@ public class CompteGeneral extends Compte {
 
 		System.out.println("Quel est le numéro du compte :");
 		numero = sc.nextLine();
-		while (!(numero.matches("[0-9]+")) && (numero.length() <= 6 || numero.length() > 0)) {
+		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
 			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
 			numero = sc.nextLine();
 		}
