@@ -1,22 +1,15 @@
 package be.steformations.controle;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.HashMap;
 import java.util.Scanner;
 
-import be.steformations.model.CompteGeneralNonSubdivisable;
+import be.steformations.model.CompteGeneral;
 import be.steformations.model.CompteParticulier;
 import be.steformations.vue.VueCompte;
 
 public class ControleCompte {
 
 	static Scanner scan = new Scanner(System.in);
-	static CompteGeneralNonSubdivisable cptgen = new CompteGeneralNonSubdivisable();
+	static CompteGeneral cptgen = new CompteGeneral();
 	static CompteParticulier cptpart = new CompteParticulier();
 	
 	private static int choice;
