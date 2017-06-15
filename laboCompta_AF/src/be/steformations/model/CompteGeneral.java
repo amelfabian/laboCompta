@@ -83,6 +83,7 @@ public class CompteGeneral implements Serializable {
 	}
 	private void enregistrement() {
 		
+		System.out.println("souhaitez vous enregistrer?");
 		
 	}
 
