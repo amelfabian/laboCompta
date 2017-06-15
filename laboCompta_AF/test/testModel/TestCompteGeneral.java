@@ -8,14 +8,9 @@ import org.junit.Test;
 import be.steformations.model.*;
 
 public class TestCompteGeneral {
-	private CompteGeneral cptgen = new CompteGeneral(); 
+	private CompteGeneralNonSubdivisable cptgen = new CompteGeneralNonSubdivisable(); 
 
-	@Test
-	public void isSubdivisable() {
-		cptgen.setValid(true);
-		assertTrue(cptgen.isValid());
-	}
-	
+
 	@Test
 	public void testNumIsValid(){
 		String string = "1234";

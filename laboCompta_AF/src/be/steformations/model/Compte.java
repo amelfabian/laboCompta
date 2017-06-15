@@ -1,8 +1,8 @@
 package be.steformations.model;
 
-public class CompteGeneral extends Compte {
+public class Compte {
 
-	public CompteGeneral() {
+	public Compte() {
 		// TODO Auto-generated constructor stub
 	}
 

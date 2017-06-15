@@ -3,7 +3,8 @@ package be.steformations;
 import java.util.HashMap;
 
 import be.steformations.controle.ControleCompte;
-import be.steformations.model.CompteGeneral;
+
+import be.steformations.model.CompteGeneralNonSubdivisable;
 
 
 public class Main {
