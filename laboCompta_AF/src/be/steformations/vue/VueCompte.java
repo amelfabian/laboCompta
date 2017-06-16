@@ -1,6 +1,6 @@
 package be.steformations.vue;
 
-import be.steformations.model.CompteGeneral;
+import be.steformations.model.ControleurCompteGeneral;
 
 public class VueCompte {	
 	
@@ -43,18 +43,19 @@ public class VueCompte {
 		
 		public static String choix (){
 			menu = new StringBuilder();
+			ControleurCompteGeneral cptgen= new ControleurCompteGeneral();
 			menu.append(String.format("Vos choix :"));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Création d'un compte général."));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Numero : " + CompteGeneral.numero));
+			menu.append(String.format("\t" + "Numero : " + cptgen.numero));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Libellé : " + CompteGeneral.libelle));
+			menu.append(String.format("\t" + "Libellé : " + cptgen.libelle));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Position dans le bilan : " + CompteGeneral.position));
+			menu.append(String.format("\t" + "Position dans le bilan : " + cptgen.position));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "subdivisible : " + CompteGeneral.sub));
+			menu.append(String.format("\t" + "subdivisible : " + cptgen.sub));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Confirmer (O/N) :"));
 			return menu.toString();

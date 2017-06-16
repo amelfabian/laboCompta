@@ -1,7 +1,7 @@
 package be.steformations.model;
 
 public class Compte {
-	private String numero = null;
+	protected String numero = null;
 	private String libelle= null;
 	public Compte(String num,String lib){
 		this.numero = num;

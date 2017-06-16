@@ -2,35 +2,37 @@ package be.steformations.controle;
 
 import java.util.Scanner;
 
-import be.steformations.model.CompteGeneral;
-import be.steformations.model.CompteParticulier;
+import be.steformations.model.ControleurCompteGeneral;
+import be.steformations.model.ControleurCompteParticulier;
 import be.steformations.vue.VueCompte;
 
 public class Builder {
 
-	static Scanner scan = new Scanner(System.in);
 	
 	private static int choice;
 	
-	public static void start() {
+	public void start() {
+		Scanner scan = new Scanner(System.in);
+		ControleurCompteGeneral cptGen = new ControleurCompteGeneral();
+		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
 		System.out.println(VueCompte.getScreen());
-		NewInput();
+		choice = scan.nextInt();
 		switch(choice){
-		case 1: CompteGeneral.creer(); 
+		case 1: cptGen.creer(); 
 		break;
-		case 2: CompteGeneral.modifier();
+		case 2: cptGen.modifier();
 		break;
-		case 3: CompteGeneral.supprimer();
+		case 3: cptGen.supprimer();
 		break; 
-		case 4: CompteGeneral.lister();
+		case 4: cptGen.lister();
 		break;
-		case 5: CompteParticulier.creer();
+		case 5: cptPart.creer();
 		break;
-		case 6: CompteParticulier.modifier();
+		case 6: cptPart.modifier();
 		break;
-		case 7: CompteParticulier.supprimer();
+		case 7: cptPart.supprimer();
 		break;
-		case 8: CompteParticulier.lister();
+		case 8: cptPart.lister();
 		break;
 		default:
 		}
@@ -41,9 +43,5 @@ public class Builder {
 	
 	
 	
-	public static void NewInput()
-	{
-	choice = scan.nextInt();
-	}
 	
 }
