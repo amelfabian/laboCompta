@@ -5,16 +5,33 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import be.steformations.vue.VueCompte;
+
 public class CompteGeneral extends Compte {
 
-	static Scanner sc = new Scanner(System.in);
-
-	private static boolean sub = false;
-	private static String numero = "";
-	char position = ' ';
+	public static Scanner sc = new Scanner(System.in);
+	public static VueCompte vue = new VueCompte();
+	public static boolean sub = false;
+	public static String numero = "";
+	public static char position = ' ';
+	public static String libelle;
 
 	public static void creer() {
 
+		Subdivise();
+		Numero();
+		libelle();
+		position();
+		VueCompte.choix();
+		char confirme = sc.nextLine().charAt(0);
+		if (confirme == 'O') {
+			ListeComptesGenereau.addToList(numero, libelle, position, sub);
+			System.out.println("le compte a été créé avec succès.");
+	}
+
+		}
+
+	private static boolean Subdivise() {
 		System.out.println("Le compte doit-il être subdivisé (O/N) ? :");
 		Character tmp = sc.nextLine().charAt(0);
 
@@ -26,7 +43,10 @@ public class CompteGeneral extends Compte {
 		if (tmp == 'o' || tmp == 'O') {
 			sub = true;
 		}
+		return sub;
+	}
 
+	public static String Numero() {
 		System.out.println("Quel est le numéro du compte :");
 		numero = sc.nextLine();
 		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
@@ -37,31 +57,8 @@ public class CompteGeneral extends Compte {
 		while (!sub && numero.length() < 6) {
 			numero = numero + "0";
 		}
-
-		System.out.println("Libellé :");
-		String libelle = sc.nextLine();
-		// il laisse passer les espaces et tab
-		while (((libelle.equals(null) || libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]") ))){
-			System.out.println("null, vide, caractères invisible :");
-			libelle = sc.nextLine();
-		}
-
-		System.out.println("Position bilan (a/b/c/d) :");
-		char position = sc.nextLine().charAt(0);
-
-		System.out.println("Vos choix :");
-		System.out.println("Création d'un compte général.");
-		System.out.println("\t" + "Numero : " + numero);
-		System.out.println("\t" + "Libellé : " + libelle);
-		System.out.println("\t" + "Position dans le bilan : " + position);
-		System.out.println("\t" + "subdivisible : " + sub);
-		System.out.println("Confirmer (O/N) :");
-		char confirme = sc.nextLine().charAt(0);
-		if (confirme == 'O') {
-			ListeComptesGenereau.addToList(numero, libelle, position, sub);
-			System.out.println("le compte a été créé avec succès.");
-
-		}
+		return numero;
+		
 	}
 
 	public static void lister() {
@@ -78,4 +75,24 @@ public class CompteGeneral extends Compte {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public static String libelle() {
+		System.out.println("Libellé :");
+		String libelle = sc.nextLine();
+		// il laisse passer les espaces et tab
+		while ((( libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]") ))){
+			System.out.println("null, vide, caractères invisible :");
+			libelle = sc.nextLine();
+		}return libelle;
+	}
+
+	public static char position() {
+		System.out.println("Position bilan (a/b/c/d) :");
+		char position = sc.nextLine().charAt(0);
+		while ( (Character.toUpperCase(position) != 'A') && (Character.toUpperCase(position) != 'B') && (Character.toUpperCase(position) != 'C') && (Character.toUpperCase(position) != 'D') ){
+			
+		}
+		return position;
+	}
+
 }
