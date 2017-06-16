@@ -11,10 +11,11 @@ public class ControleurCompteGeneral  {
 	
 
 	public Scanner sc = new Scanner(System.in);
-	public boolean sub = false;
-	public String numero = "";
-	public char position = ' ';
-	public String libelle;
+	private  boolean sub = false;
+	private  String numero;
+	private  char position;
+	private  String libelle;
+	VueCompte vue = new VueCompte();
 
 	public void creer() {
 
@@ -22,7 +23,7 @@ public class ControleurCompteGeneral  {
 		Numero();
 		libelle();
 		position();
-		System.out.println(VueCompte.choix());
+		System.out.println(vue.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
 			//ListeComptesGenereau.addToList(numero, libelle, position, sub);
@@ -41,23 +42,23 @@ public class ControleurCompteGeneral  {
 
 		}
 		if (tmp == 'o' || tmp == 'O') {
-			sub = true;
+			setSub(true);
 		}
-		return sub;
+		return isSub();
 	}
 
 	public  String Numero() {
 		System.out.println("Quel est le numéro du compte :");
-		numero = sc.nextLine();
-		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
+		setNumero(sc.nextLine());
+		while ((!(getNumero().matches("[0-9]+"))) || getNumero().length() > 6 || getNumero().length() < 1) {
 			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
-			numero = sc.nextLine();
+			setNumero(sc.nextLine());
 		}
 
-		while (!sub && numero.length() < 6) {
-			numero = numero + "0";
+		while (!isSub() && getNumero().length() < 6) {
+			setNumero(getNumero() + "0");
 		}
-		return numero;
+		return getNumero();
 		
 	}
 
@@ -94,6 +95,38 @@ public class ControleurCompteGeneral  {
 			 position = sc.nextLine().charAt(0);
 		}
 		return position;
+	}
+
+	public  String getNumero() {
+		return numero;
+	}
+
+	public  void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public  String getLibelle() {
+		return libelle;
+	}
+
+	public  void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+	public  char getPosition() {
+		return position;
+	}
+
+	public  void setPosition(char position) {
+		this.position = position;
+	}
+
+	public  boolean isSub() {
+		return sub;
+	}
+
+	public  void setSub(boolean sub) {
+		this.sub = sub;
 	}
 
 }

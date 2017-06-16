@@ -13,7 +13,8 @@ public class Builder {
 		Scanner scan = new Scanner(System.in);
 		ControleurCompteGeneral cptGen = new ControleurCompteGeneral();
 		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
-		System.out.println(VueCompte.getScreen());
+		VueCompte vue = new VueCompte();
+		System.out.println(vue.getScreen());
 		choice = scan.nextInt();
 		switch(choice){
 		case 1: cptGen.creer(); 

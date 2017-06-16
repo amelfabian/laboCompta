@@ -26,7 +26,8 @@ public class ControleurCompteParticulier extends Compte {
 		Numero();
 		libelle();
 		position();
-		System.out.println(VueCompte.choix());
+		VueCompte vue = new VueCompte();
+		System.out.println(vue.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
 			//ListeComptesGenereau.addToList(numero, libelle, position, sub);

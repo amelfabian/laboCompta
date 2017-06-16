@@ -4,8 +4,8 @@ import be.steformations.controle.ControleurCompteGeneral;
 
 public class VueCompte {	
 	
-		private static StringBuilder menu;
-		public static String getScreen() {
+		private  StringBuilder menu;
+		public String getScreen() {
 			
 			menu = new StringBuilder();
 			menu.append(String.format("Menu compte"));
@@ -41,7 +41,7 @@ public class VueCompte {
 			
 		}
 		
-		public static String choix (){
+		public  String choix (){
 			menu = new StringBuilder();
 			ControleurCompteGeneral cptgen= new ControleurCompteGeneral();
 		
@@ -50,13 +50,13 @@ public class VueCompte {
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Création d'un compte général."));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Numero : " + cptgen.numero));
+			menu.append(String.format("\t" + "Numero : " + cptgen.getNumero()));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Libellé : " + cptgen.libelle));
+			menu.append(String.format("\t" + "Libellé : " + cptgen.getLibelle()));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Position dans le bilan : " + cptgen.position));
+			menu.append(String.format("\t" + "Position dans le bilan : " + cptgen.getPosition()));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "subdivisible : " + cptgen.sub));
+			menu.append(String.format("\t" + "subdivisible : " + cptgen.isSub()));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Confirmer (O/N) :"));
 			return menu.toString();
