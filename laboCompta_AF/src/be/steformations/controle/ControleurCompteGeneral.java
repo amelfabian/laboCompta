@@ -12,9 +12,9 @@ public class ControleurCompteGeneral  {
 
 	public Scanner sc = new Scanner(System.in);
 	private  boolean sub = false;
-	private  String numero;
-	private  char position;
-	private  String libelle;
+	private  String numero = "numero";
+	private  char position = '!';
+	private  String libelle = "abcd";
 	VueCompte vue = new VueCompte();
 
 	public void creer() {
@@ -127,6 +127,7 @@ public class ControleurCompteGeneral  {
 
 	public  void setSub(boolean sub) {
 		this.sub = sub;
+		
 	}
 
 }
