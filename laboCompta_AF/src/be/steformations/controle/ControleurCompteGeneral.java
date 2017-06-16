@@ -1,4 +1,4 @@
-package be.steformations.model;
+package be.steformations.controle;
 
 import java.util.Scanner;
 import java.util.Set;

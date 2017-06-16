@@ -2,8 +2,6 @@ package be.steformations.controle;
 
 import java.util.Scanner;
 
-import be.steformations.model.ControleurCompteGeneral;
-import be.steformations.model.ControleurCompteParticulier;
 import be.steformations.vue.VueCompte;
 
 public class Builder {

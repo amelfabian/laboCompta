@@ -1,7 +1,8 @@
-package be.steformations.model;
+package be.steformations.controle;
 
 import java.util.Scanner;
 
+import be.steformations.model.Compte;
 import be.steformations.vue.VueCompte;
 
 public class ControleurCompteParticulier extends Compte {

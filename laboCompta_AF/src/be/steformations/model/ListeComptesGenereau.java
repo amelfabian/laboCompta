@@ -2,6 +2,8 @@ package be.steformations.model;
 
 import java.util.HashMap;
 
+import be.steformations.controle.ControleurCompteGeneral;
+
 
 public class ListeComptesGenereau {
 	private static HashMap<String, ControleurCompteGeneral> compteGeneral;

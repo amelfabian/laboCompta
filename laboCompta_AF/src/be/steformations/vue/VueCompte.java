@@ -1,6 +1,6 @@
 package be.steformations.vue;
 
-import be.steformations.model.ControleurCompteGeneral;
+import be.steformations.controle.ControleurCompteGeneral;
 
 public class VueCompte {	
 	
