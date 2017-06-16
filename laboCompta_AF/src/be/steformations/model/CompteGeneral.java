@@ -10,7 +10,6 @@ import be.steformations.vue.VueCompte;
 public class CompteGeneral extends Compte {
 
 	public static Scanner sc = new Scanner(System.in);
-	public static VueCompte vue = new VueCompte();
 	public static boolean sub = false;
 	public static String numero = "";
 	public static char position = ' ';
@@ -22,7 +21,7 @@ public class CompteGeneral extends Compte {
 		Numero();
 		libelle();
 		position();
-		VueCompte.choix();
+		System.out.println(VueCompte.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
 			ListeComptesGenereau.addToList(numero, libelle, position, sub);
@@ -89,8 +88,9 @@ public class CompteGeneral extends Compte {
 	public static char position() {
 		System.out.println("Position bilan (a/b/c/d) :");
 		char position = sc.nextLine().charAt(0);
-		while ( (Character.toUpperCase(position) != 'A') && (Character.toUpperCase(position) != 'B') && (Character.toUpperCase(position) != 'C') && (Character.toUpperCase(position) != 'D') ){
-			
+		while ( (Character.toString(position).matches("[A-D?]"))){
+			System.out.println("Position bilan (a/b/c/d) :");
+			 position = sc.nextLine().charAt(0);
 		}
 		return position;
 	}
