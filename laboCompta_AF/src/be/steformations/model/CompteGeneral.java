@@ -8,7 +8,10 @@ import java.util.TreeSet;
 import be.steformations.vue.VueCompte;
 
 public class CompteGeneral extends Compte {
-
+	
+	public CompteGeneral(String numero,String libelle){
+		super(numero, libelle);
+	}
 	public static Scanner sc = new Scanner(System.in);
 	public static boolean sub = false;
 	public static String numero = "";
