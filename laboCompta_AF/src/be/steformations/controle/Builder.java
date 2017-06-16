@@ -6,6 +6,7 @@ import be.steformations.vue.VueCompte;
 
 public class Builder {
 
+
 	
 	private static int choice;
 	
@@ -35,12 +36,6 @@ public class Builder {
 		break;
 		default:
 		}
-	
+
 	}
-	
-	
-	
-	
-	
-	
 }
