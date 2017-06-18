@@ -68,37 +68,40 @@ public class ControleurCompteGeneral  {
 
 
 
+	
+	public  void setNumero(String numero) {
+		
+		System.out.println("Quel est le numéro du compte :");
+		numero = sc.nextLine();
+		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
+			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
+			numero = sc.nextLine();
+		while (!sub && (numero.length() < 6 || numero.length() >1)){
+			numero = numero + '0';
+			this.numero = numero;
+		}
+		}
+		
+
+	}
 	public  String getNumero() {
 		return numero;
 	}
-
-	public  void setNumero(String numero) {
-		this.numero = numero;
-		System.out.println("Quel est le numéro du compte :");
-		setNumero(sc.nextLine());
-		while ((!(getNumero().matches("[0-9]+"))) || getNumero().length() > 6 || getNumero().length() < 1) {
-			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
-			setNumero(sc.nextLine());
-		}
-
-		while (!isSub() && getNumero().length() < 6) {
-			setNumero(getNumero() + "0");
-		}
-	}
-
-	public  String getLibelle() {
-		return libelle;
-	}
+	
 
 	public  void setLibelle(String lib) {
-		this.libelle = lib;
+		
 		System.out.println("Libellé :");
-		String libelle = sc.nextLine();
+		lib = sc.nextLine();
 		// il laisse passer les espaces et tab
 		while ((( libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]") ))){
 			System.out.println("null, vide, caractères invisible :");
 			libelle = sc.nextLine();
+			this.libelle = lib;
 		}
+	}
+	public  String getLibelle() {
+		return libelle;
 	}
 
 	public  char getPosition() {
@@ -106,12 +109,13 @@ public class ControleurCompteGeneral  {
 	}
 
 	public  void setPosition(char position) {
-		this.position = position;
+	
 		System.out.println("Position bilan (a/b/c/d) :");
 		position = sc.nextLine().charAt(0);
 		while ( (Character.toString(position).matches("[A-D?]"))){
 			System.out.println("Position bilan (a/b/c/d) :");
 		}
+		this.position = position;
 	}
 
 	public  boolean isSub() {
