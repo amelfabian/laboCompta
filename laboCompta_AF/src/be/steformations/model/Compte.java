@@ -7,16 +7,5 @@ public class Compte {
 		this.numero = num;
 		this.libelle = lib;
 	}
-	public String getNumero() {
-		return numero;
-	}
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-	public String getLibelle() {
-		return libelle;
-	}
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
+
 }
