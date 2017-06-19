@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import be.steformations.Position;
 import be.steformations.vue.VueCompte;
 
 public class ControleurCompteGeneral  {
@@ -93,7 +94,6 @@ public class ControleurCompteGeneral  {
 		
 		System.out.println("Libellé :");
 		lib = sc.nextLine();
-		// il laisse passer les espaces et tab
 		while ((( libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]") ))){
 			System.out.println("null, vide, caractères invisible :");
 			libelle = sc.nextLine();
@@ -104,9 +104,7 @@ public class ControleurCompteGeneral  {
 		return libelle;
 	}
 
-	public  char getPosition() {
-		return position;
-	}
+	
 
 	public  void setPosition(char position) {
 	
@@ -115,9 +113,13 @@ public class ControleurCompteGeneral  {
 		while ( (Character.toString(position).matches("[A-D?]"))){
 			System.out.println("Position bilan (a/b/c/d) :");
 		}
+		
 		this.position = position;
 	}
 
+	public  char getPosition() {
+		return position;
+	}
 	public  boolean isSub() {
 		return sub;
 	}
