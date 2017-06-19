@@ -21,7 +21,7 @@ public class ControleurCompteGeneral  {
 	public void creer() {
 
 		Subdivise();
-		setNumero(libelle);
+		setNumero(numero);
 		setLibelle(libelle);
 		setPosition(position);
 		System.out.println(vue.choix());
@@ -92,13 +92,12 @@ public class ControleurCompteGeneral  {
 
 	public  void setLibelle(String lib) {
 		
-		System.out.println("Libellé :");
-		lib = sc.nextLine();
-		while ((( libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]") ))){
-			System.out.println("null, vide, caractères invisible :");
-			libelle = sc.nextLine();
-			this.libelle = lib;
-		}
+		System.out.println("Libellé :");
+		libelle = sc.nextLine();
+		while (((libelle.equals(null) || libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]")))) {
+			System.out.println("null, vide, caractères invisible :");
+			libelle = sc.nextLine();}
+		this.libelle = lib;
 	}
 	public  String getLibelle() {
 		return libelle;
@@ -112,6 +111,7 @@ public class ControleurCompteGeneral  {
 		position = sc.nextLine().charAt(0);
 		while ( (Character.toString(position).matches("[A-D?]"))){
 			System.out.println("Position bilan (a/b/c/d) :");
+			position = sc.nextLine().charAt(0);
 		}
 		
 		this.position = position;
