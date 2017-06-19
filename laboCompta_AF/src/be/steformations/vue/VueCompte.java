@@ -5,7 +5,25 @@ import be.steformations.controle.ControleurCompteGeneral;
 public class VueCompte {	
 	
 		private  StringBuilder menu;
-		public String getScreen() {
+		
+		public StringBuilder getScreenMenu(){
+			menu = new StringBuilder();
+			menu.append(String.format("Menu"));
+			menu.append(String.format(System.lineSeparator()));
+			menu.append(String.format("_______________     "));
+			menu.append(String.format(System.lineSeparator()));
+			menu.append(String.format(System.lineSeparator()));
+			menu.append(String.format(" 1.compte général"));
+			menu.append(String.format(System.lineSeparator()));
+			menu.append(String.format("	2.compte particulier"));
+			menu.append(String.format(System.lineSeparator()));
+			menu.append(String.format("	3.écriture"));
+			menu.append(String.format(System.lineSeparator()));
+			menu.append(String.format("Entrez votre choix: "));
+			return menu;
+			
+		}
+		public String getScreenGeneral() {
 			
 			menu = new StringBuilder();
 			menu.append(String.format("Menu compte"));
@@ -24,6 +42,13 @@ public class VueCompte {
 			menu.append(String.format("	4.Lister"));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format(System.lineSeparator()));
+			menu.append(String.format("Entrez votre choix: "));
+			return menu.toString();
+			
+		}
+		
+		public StringBuilder getScreenParticulier(){
+			menu = new StringBuilder();
 			menu.append(String.format(" .compte particulier"));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format(System.lineSeparator()));
@@ -37,8 +62,7 @@ public class VueCompte {
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Entrez votre choix: "));
-			return menu.toString();
-			
+			return menu;
 		}
 		
 		public  String choix (){

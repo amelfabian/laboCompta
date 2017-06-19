@@ -10,6 +10,8 @@ public class Builder {
 
 	
 	public void Start(){
+		VueCompte vue = new VueCompte();
+		System.out.println(vue.getScreenMenu());
 		ControleurCompteGeneral cptGen = new ControleurCompteGeneral();
 		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
 		Ecriture ecrit = new Ecriture();

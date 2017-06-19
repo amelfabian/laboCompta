@@ -19,7 +19,7 @@ public class ControleurCompteParticulier extends Compte {
 		Scanner scan = new Scanner(System.in);
 		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
 		VueCompte vue = new VueCompte();
-		System.out.println(vue.getScreen());
+		System.out.println(vue.getScreenMenu());
 		int choice = scan.nextInt();
 		switch(choice){
 

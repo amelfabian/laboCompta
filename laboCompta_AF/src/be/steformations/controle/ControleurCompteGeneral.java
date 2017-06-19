@@ -19,6 +19,8 @@ public class ControleurCompteGeneral  {
 	VueCompte vue = new VueCompte();
 
 	public void VueGeneral(){
+	VueCompte vue = new VueCompte();
+	System.out.println(vue.getScreenMenu());
 	Scanner scan = new Scanner(System.in);
 	ControleurCompteGeneral cptGen = new ControleurCompteGeneral();
 	int choix = scan.nextInt();
