@@ -3,7 +3,9 @@ package be.steformations.model;
 public class Ecriture {
 
 	public Ecriture() {
-		// TODO Auto-generated constructor stub
+	 
 	}
-
+	public void VueEcriture(){
+		System.out.println("Ecriture.VueEcriture()");
+	}
 }

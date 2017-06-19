@@ -12,18 +12,34 @@ public class ControleurCompteGeneral  {
 	
 
 	public Scanner sc = new Scanner(System.in);
-	private  boolean sub = false;
-	private  String numero;
-	private  char position;
-	private  String libelle;
+	public  boolean sub = false;
+	public  String numero = null;
+	public  char position ;
+	public  String libelle= null;
 	VueCompte vue = new VueCompte();
 
+	public void VueGeneral(){
+	Scanner scan = new Scanner(System.in);
+	ControleurCompteGeneral cptGen = new ControleurCompteGeneral();
+	int choix = scan.nextInt();
+	switch(choix){
+	case 1 : cptGen.creer();
+	break;
+	case 2: cptGen.modifier();
+	break;
+	case 3: cptGen.supprimer();
+	break; 
+	case 4: cptGen.lister();
+	break;
+	}
+		
+	}
 	public void creer() {
 
-		Subdivise();
+		setSub(sub);
 		setNumero(numero);
 		setLibelle(libelle);
-		setPosition(position);
+		getPosition();
 		System.out.println(vue.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
@@ -33,36 +49,18 @@ public class ControleurCompteGeneral  {
 
 		}
 
-	private  boolean Subdivise() {
-		System.out.println("Le compte doit-il être subdivisé (O/N) ? :");
-		Character tmp = sc.nextLine().charAt(0);
-
-		while (!((Character.toUpperCase(tmp) == 'O') || (Character.toUpperCase(tmp) == 'N'))) {
-			System.out.println("(O/N) ? :");
-			tmp = sc.nextLine().charAt(0);
-
-		}
-		if (tmp == 'o' || tmp == 'O') {
-			setSub(true);
-		}
-		return isSub();
-	}
-
 	
 
 	public  void lister() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("ControleurCompteGeneral.lister()");
 	}
 
 	public void supprimer() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("ControleurCompteGeneral.supprimer()");		
 	}
 
 	public  void modifier() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("ControleurCompteGeneral.modifier()");		
 	}
 
 
@@ -86,6 +84,7 @@ public class ControleurCompteGeneral  {
 
 	}
 	public  String getNumero() {
+
 		return numero;
 	}
 	
@@ -100,6 +99,7 @@ public class ControleurCompteGeneral  {
 		this.libelle = lib;
 	}
 	public  String getLibelle() {
+	
 		return libelle;
 	}
 
@@ -117,7 +117,7 @@ public class ControleurCompteGeneral  {
 		this.position = position;
 	}
 
-	public  char getPosition() {
+	public  Character getPosition() {
 		return position;
 	}
 	public  boolean isSub() {
@@ -125,6 +125,16 @@ public class ControleurCompteGeneral  {
 	}
 
 	public  void setSub(boolean sub) {
+		System.out.println("Le compte doit-il être subdivisé (O/N) ? :");
+		Character tmp = sc.nextLine().charAt(0);
+		while (!((Character.toUpperCase(tmp) == 'O') || (Character.toUpperCase(tmp) == 'N'))) {
+			System.out.println("(O/N) ? :");
+			tmp = sc.nextLine().charAt(0);
+
+		}
+		if (tmp == 'o' || tmp == 'O') {
+			sub = true;
+		}
 		this.sub = sub;
 	}
 

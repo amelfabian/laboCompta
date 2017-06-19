@@ -13,11 +13,28 @@ public class ControleurCompteParticulier extends Compte {
 	private static String numero;
 	public ControleurCompteParticulier() {
 		super(libelle,numero);
-		
+	}
 	
+	public void VueParticulier() {
+		Scanner scan = new Scanner(System.in);
+		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
+		VueCompte vue = new VueCompte();
+		System.out.println(vue.getScreen());
+		int choice = scan.nextInt();
+		switch(choice){
+
+		case 1: cptPart.creer();
+		break;
+		case 2: cptPart.modifier();
+		break;
+		case 3: cptPart.supprimer();
+		break;
+		case 4: cptPart.lister();
+		break;
+		default:
+		}
 
 	}
-
 
 
 	public void creer() {

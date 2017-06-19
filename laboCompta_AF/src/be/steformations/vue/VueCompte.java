@@ -44,7 +44,7 @@ public class VueCompte {
 		public  String choix (){
 			menu = new StringBuilder();
 			ControleurCompteGeneral cptgen= new ControleurCompteGeneral();
-		
+		    
 			menu.append(String.format("Vos choix :"));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format(System.lineSeparator()));

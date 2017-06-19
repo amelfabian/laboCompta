@@ -2,40 +2,30 @@ package be.steformations.controle;
 
 import java.util.Scanner;
 
+import be.steformations.model.Ecriture;
 import be.steformations.vue.VueCompte;
 
 public class Builder {
 
 
 	
-	private static int choice;
-	
-	public void start() {
-		Scanner scan = new Scanner(System.in);
+	public void Start(){
 		ControleurCompteGeneral cptGen = new ControleurCompteGeneral();
 		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
-		VueCompte vue = new VueCompte();
-		System.out.println(vue.getScreen());
-		choice = scan.nextInt();
+		Ecriture ecrit = new Ecriture();
+		
+		Scanner scan = new Scanner(System.in);
+		int choice = scan.nextInt();
 		switch(choice){
-		case 1: cptGen.creer(); 
+		case 1 : cptGen.VueGeneral();
 		break;
-		case 2: cptGen.modifier();
+		case 2 : cptPart.VueParticulier();
 		break;
-		case 3: cptGen.supprimer();
-		break; 
-		case 4: cptGen.lister();
-		break;
-		case 5: cptPart.creer();
-		break;
-		case 6: cptPart.modifier();
-		break;
-		case 7: cptPart.supprimer();
-		break;
-		case 8: cptPart.lister();
-		break;
-		default:
+		case 3 : ecrit.VueEcriture();
 		}
-
 	}
+	
+
+	
+
 }
