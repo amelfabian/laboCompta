@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 import be.steformations.vue.VueCompte;
 
-public class CompteParticulier  extends Compte {
-		public Scanner sc = new Scanner(System.in);
-		public  boolean sub = false;
-		public  String numero = null;
-		public  char position ;
-		public  String libelle= null;
-		VueCompte vue = new VueCompte();
-		public CompteParticulier() {
-			super();
-		}
-		
+public class CompteParticulier extends Compte {
+	public Scanner sc = new Scanner(System.in);
+	public boolean sub = false;
+	public String numero = null;
+	public char position;
+	public String libelle = null;
+	VueCompte vue = new VueCompte();
+
+	public CompteParticulier() {
+		super();
+	}
+
 	public void creer() {
 
 		Subdivise();
@@ -25,39 +26,40 @@ public class CompteParticulier  extends Compte {
 		System.out.println(vue.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
-			ListeComptesGenereau.addToList(numero, libelle, position, sub);
+			ListeComptesGenereau lcg = new ListeComptesGenereau();
+			lcg.addToList(numero, libelle, position, sub);
 			System.out.println("le compte a été créé avec succès.");
 		}
 	}
 
 	private void getPosition() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	private  void libelle() {
+	private void libelle() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	public  String getNumero(){
+	public String getNumero() {
 		return numero;
 	}
 
-	private  void Subdivise() {
+	private void Subdivise() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void modifier() {
 		System.out.println("CompteParticulier.modifier()");
 	}
 
-	public  void supprimer() {
+	public void supprimer() {
 		System.out.println("CompteParticulier.supprimer()");
 	}
 
-	public  void lister() {
+	public void lister() {
 		System.out.println("CompteParticulier.lister()");
 	}
 
@@ -70,13 +72,13 @@ public class CompteParticulier  extends Compte {
 	@Override
 	public void setLibelle(String libelle) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setNumero(String numero) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
