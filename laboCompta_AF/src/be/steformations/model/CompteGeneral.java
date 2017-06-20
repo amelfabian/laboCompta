@@ -25,7 +25,7 @@ public class CompteGeneral extends Compte{
 		System.out.println(vue.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
-			//ListeComptesGenereau.addToList(numero, libelle, position, sub);
+			ListeComptesGenereau.addToList(numero, libelle, position, sub);
 			System.out.println("le compte a été créé avec succès.");
 	}
 
