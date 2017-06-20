@@ -1,6 +1,7 @@
 package be.steformations.vue;
 
 import be.steformations.controle.ControleurCompteGeneral;
+import be.steformations.model.CompteGeneral;
 
 public class VueCompte {	
 	
@@ -12,12 +13,12 @@ public class VueCompte {
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("_______________     "));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format(" 1.compte général"));
+			menu.append(String.format(System.lineSeparator()));		
+			menu.append(String.format(" 1.compte général"   ));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("	2.compte particulier"));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("	3.écriture"));
+			menu.append(String.format("	3.écriture"         ));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Entrez votre choix: "));
 			return menu;
@@ -67,7 +68,9 @@ public class VueCompte {
 		
 		public  String choix (){
 			menu = new StringBuilder();
-			ControleurCompteGeneral cptgen= new ControleurCompteGeneral();
+			String libelle = null;
+			String numero = null;
+			CompteGeneral cptgen= new CompteGeneral(libelle, numero);
 		    
 			menu.append(String.format("Vos choix :"));
 			menu.append(String.format(System.lineSeparator()));
