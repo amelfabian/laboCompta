@@ -19,9 +19,9 @@ public class ControleurCompteGeneral {
 		Numero();
 		Libelle();
 		Position();
-		vue.AfficheCompteAvantConfirmerCg(cmpt);
-		char confirme = sc.nextLine().charAt(0);
-		if (confirme == 'O') {
+		System.out.println(vue.AfficheCompteAvantConfirmerCg(cmpt));
+		Character confirme = sc.nextLine().charAt(0);
+		if (Character.toUpperCase(confirme) == 'O') {
 			if (!(listeCG.addToList(cmpt))) {
 				System.out.println("le compte a été créé avec succès.");
 			} else {

@@ -24,7 +24,7 @@ public class CompteParticulier extends Compte {
 		libelle();
 		getPosition();
 		Vue vue = new Vue();
-		System.out.println(vue.choix(cptPart));
+		System.out.println(vue.AfficheCompteAvantConfirmerCp(cptPart));
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
 			ListeComptesGenereau lcg = new ListeComptesGenereau();
@@ -33,7 +33,8 @@ public class CompteParticulier extends Compte {
 		}
 	}
 
-	private void getPosition() {
+	 char getPosition() {
+		return position;
 		// TODO Auto-generated method stub
 
 	}
@@ -80,6 +81,11 @@ public class CompteParticulier extends Compte {
 	public void setNumero(String numero) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public boolean isSub() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

@@ -11,7 +11,7 @@ public class ControleurCompteParticulier {
 	public void VueParticulier() {
 		CompteParticulier cptPart = new CompteParticulier();
 		Vue vue = new Vue();
-		System.out.println(Vue.getScreenParticulier());
+		System.out.println(vue.getScreenParticulier());
 		int choice = sc.nextInt();
 		switch (choice) {
 

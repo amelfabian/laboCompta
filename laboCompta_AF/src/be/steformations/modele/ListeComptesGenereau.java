@@ -47,5 +47,43 @@ public class ListeComptesGenereau {
 		System.out.println(ajoutOK);
 		return ajoutOK;
 	}
+	
+	public boolean addToList(CompteParticulier cmptP) {
+		String numero = cmptP.getNumero();
+		String libelle = cmptP.getLibelle();
+		char position = cmptP.getPosition();
+		boolean sub = cmptP.isSub();
+
+		boolean ajoutOK = false;
+		System.out.println(ajoutOK);
+		ajoutOK = compteGeneral.containsKey(numero);
+		System.out.println(ajoutOK);
+
+		/*
+		 * Iterator it = compteGeneral.keySet().iterator(); while
+		 * (it.hasNext()){ if ()
+		 * 
+		 * }
+		 */
+		if (!(ajoutOK)) {
+			if (sub && numero.length() < 6) {
+				System.out.println("Je rentre dans l'ajout");
+				CompteGeneral cpt = new GeneralSubdivisable(numero, libelle, position, sub);
+				System.out.println("Size of the map: "+ compteGeneral.size());
+				compteGeneral.put(numero, cpt);
+				System.out.println("Size of the map: "+ compteGeneral.size());
+				
+			} else if (sub && numero.length() == 6) {
+				CompteGeneral cpt = new GeneralSubdivisabkeParticulier(numero, libelle, position, sub);
+				compteGeneral.put(numero, cpt);
+			} else if (!sub) {
+				CompteGeneral cpt = new GeneralNonSubdivisable(numero, libelle, position);
+				compteGeneral.put(numero, cpt);
+			}
+		}
+		System.out.println(ajoutOK);
+		return ajoutOK;
+		
+	}
 
 }

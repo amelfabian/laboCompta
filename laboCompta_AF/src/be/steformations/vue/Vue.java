@@ -1,11 +1,12 @@
 package be.steformations.vue;
 
 import be.steformations.modele.CompteGeneral;
+import be.steformations.modele.CompteParticulier;
 
 public class Vue {
 	private StringBuilder menu;
 
-	public void getScreenMenu() {
+	public String getScreenMenu() {
 		menu = new StringBuilder();
 		menu.append(String.format("Menu"));
 		menu.append(String.format(System.lineSeparator()));
@@ -18,11 +19,11 @@ public class Vue {
 		menu.append(String.format("(3) Ecriture"));
 		menu.append(String.format(System.lineSeparator()));
 		menu.append(String.format("Entrez votre choix: "));
-		System.out.println(menu.toString());
+		return menu.toString();
 
 	}
 
-	public void getScreenGeneral() {
+	public String getScreenGeneral() {
 		menu = new StringBuilder();
 		menu.append(String.format("Menu compte général"));
 		menu.append(String.format(System.lineSeparator()));
@@ -40,10 +41,10 @@ public class Vue {
 		menu.append(String.format("(4) Lister"));
 		menu.append(String.format(System.lineSeparator()));
 		menu.append(String.format("Entrez votre choix: "));
-		System.out.println(menu.toString());
+		return menu.toString();
 	}
 
-	public void getScreenParticulier() {
+	public String getScreenParticulier() {
 		menu = new StringBuilder();
 		menu.append(String.format("Menu compte particulier"));
 		menu.append(String.format(System.lineSeparator()));
@@ -59,10 +60,10 @@ public class Vue {
 		menu.append(String.format("(4) Lister"));
 		menu.append(String.format(System.lineSeparator()));
 		menu.append(String.format("Entrez votre choix: "));
-		System.out.println(menu.toString());
+		return menu.toString();
 	}
 
-	public void AfficheCompteAvantConfirmerCg(CompteGeneral pCmptG) {
+	public String AfficheCompteAvantConfirmerCg(CompteGeneral pCmptG) {
 		menu = new StringBuilder();
 		menu.append(String.format("Vos choix :"));
 		menu.append(String.format(System.lineSeparator()));
@@ -77,11 +78,13 @@ public class Vue {
 		menu.append(String.format("\t" + "subdivisible : " + pCmptG.isSub()));
 		menu.append(String.format(System.lineSeparator()));
 		menu.append(String.format("Confirmer (O/N) :"));
-		System.out.println(menu.toString());
+		return menu.toString();
 	}
 
-	public void AfficheCompteAvantConfirmerCp(CompteGeneral pCmptP) {
+	public String AfficheCompteAvantConfirmerCp(CompteParticulier CmptP) {
+		String string = null;
 		System.out.println("Vue.AfficheCompteAvantConfirmerCp()");
+		return string;
 	}
 
 	public void getScreenEcriture() {

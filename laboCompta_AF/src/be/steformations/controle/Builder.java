@@ -9,7 +9,7 @@ public class Builder {
 
 	public void Start() {
 		Vue vue = new Vue();
-		vue.getScreenMenu();
+		System.out.println(vue.getScreenMenu());
 		ControleurCompteGeneral ctrlCG = new ControleurCompteGeneral();
 		// ControleurCompteParticulier cptPart = new
 		// ControleurCompteParticulier();
@@ -18,7 +18,7 @@ public class Builder {
 
 		switch (choix) {
 		case 1:
-			vue.getScreenGeneral();
+			System.out.println(vue.getScreenGeneral());
 			choixMenuG = Integer.parseInt(sc.nextLine());
 			break;
 		case 2:
