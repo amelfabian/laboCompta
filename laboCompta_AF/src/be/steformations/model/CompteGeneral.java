@@ -2,6 +2,7 @@ package be.steformations.model;
 
 import java.util.Scanner;
 
+import be.steformations.controle.ControleurCompteGeneral;
 import be.steformations.vue.VueCompte;
 
 public class CompteGeneral extends Compte {
@@ -20,11 +21,11 @@ public class CompteGeneral extends Compte {
 	}
 
 	public void creer() {
-
-		setSub(sub);
-		setNumero(numero);
-		setLibelle(libelle);
-		setPosition(position);
+		ControleurCompteGeneral ctrl = new ControleurCompteGeneral();
+		ctrl.subdivisable();;
+		ctrl.numero();
+		ctrl.libelle();
+		ctrl.position();
 		System.out.println(vue.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
