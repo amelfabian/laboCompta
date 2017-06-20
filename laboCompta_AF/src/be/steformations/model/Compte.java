@@ -2,8 +2,8 @@ package be.steformations.model;
 
 public abstract class Compte {
 
-	private String numero;
-	private String libelle;
+	protected String numero;
+	protected String libelle;
 	public Compte(){
 		this.numero = null;
 		this.libelle = null;

@@ -6,14 +6,16 @@ import be.steformations.vue.VueCompte;
 
 public class CompteGeneral extends Compte{
 	public Scanner sc = new Scanner(System.in);
-	public  boolean sub = false;
-	public  String numero = null;
-	public  char position ;
-	public  String libelle= null;
+
 	VueCompte vue = new VueCompte();
+
+	private boolean sub;
+
+	private char position;
 	public CompteGeneral() {
 		super();
-		
+		this.getNumero();
+		this.getLibelle();
 	}
 
 	public void creer() {
@@ -21,7 +23,7 @@ public class CompteGeneral extends Compte{
 		setSub(sub);
 		setNumero(numero);
 		setLibelle(libelle);
-		getPosition();
+		setPosition(position);
 		System.out.println(vue.choix());
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
