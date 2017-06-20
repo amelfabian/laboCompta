@@ -1,4 +1,4 @@
-package be.steformations.model;
+package be.steformations.modele;
 
 public class CompteParticulierNonSubdivisable extends CompteParticulier {
 	public String libelle = null;

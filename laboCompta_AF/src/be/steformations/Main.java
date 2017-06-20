@@ -21,9 +21,10 @@ public class Main {
 			sub = sc.nextLine().charAt(0);
 
 		}
-		System.out.println("Dazvidaniya");
+		System.out.println("Dazvidaniya !!!");
 	
 
-	}   
+	}
+}
 
 
