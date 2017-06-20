@@ -4,7 +4,7 @@ import be.steformations.controle.ControleurCompteGeneral;
 import be.steformations.model.CompteGeneral;
 import be.steformations.model.CompteParticulier;
 
-public class VueCompte {	
+public class Vue {	
 	
 		private static  StringBuilder menu;
 		

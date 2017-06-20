@@ -3,12 +3,12 @@ package be.steformations.model;
 import java.util.Scanner;
 
 import be.steformations.controle.ControleurCompteGeneral;
-import be.steformations.vue.VueCompte;
+import be.steformations.vue.Vue;
 
 public class CompteGeneral extends Compte {
 	private String numero;
 	private String libelle;
-	VueCompte vue = new VueCompte();
+	Vue vue = new Vue();
 	private boolean sub;
 	private char position;
 

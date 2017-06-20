@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 import be.steformations.model.Compte;
 import be.steformations.model.CompteParticulier;
-import be.steformations.vue.VueCompte;
+import be.steformations.vue.Vue;
 
 public class ControleurCompteParticulier {
 	private Scanner sc = new Scanner(System.in);
 	public void VueParticulier() {
 		CompteParticulier cptPart = new CompteParticulier();
-		VueCompte vue = new VueCompte();
-		System.out.println(VueCompte.getScreenParticulier());
+		Vue vue = new Vue();
+		System.out.println(Vue.getScreenParticulier());
 		int choice = sc.nextInt();
 		switch (choice) {
 

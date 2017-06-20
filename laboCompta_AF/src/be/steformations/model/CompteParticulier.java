@@ -2,7 +2,7 @@ package be.steformations.model;
 
 import java.util.Scanner;
 
-import be.steformations.vue.VueCompte;
+import be.steformations.vue.Vue;
 
 public class CompteParticulier extends Compte {
 	public Scanner sc = new Scanner(System.in);
@@ -10,7 +10,7 @@ public class CompteParticulier extends Compte {
 	public String numero = null;
 	public char position;
 	public String libelle = null;
-	VueCompte vue = new VueCompte();
+	Vue vue = new Vue();
 	CompteParticulier cptPart = new CompteParticulier();
 
 	public CompteParticulier() {
@@ -23,7 +23,7 @@ public class CompteParticulier extends Compte {
 		getNumero();
 		libelle();
 		getPosition();
-		VueCompte vue = new VueCompte();
+		Vue vue = new Vue();
 		System.out.println(vue.choix(cptPart));
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {

@@ -8,7 +8,7 @@ import java.util.TreeSet;
 import be.steformations.Position;
 import be.steformations.model.CompteGeneral;
 import be.steformations.model.ListeComptesGenereau;
-import be.steformations.vue.VueCompte;
+import be.steformations.vue.Vue;
 
 public class ControleurCompteGeneral {
 
@@ -18,7 +18,7 @@ public class ControleurCompteGeneral {
 	private char position;
 	private String libelle = null;
 	CompteGeneral cptGen = new CompteGeneral();
-	VueCompte vue = new VueCompte();
+	Vue vue = new Vue();
 
 	public ControleurCompteGeneral() {
 		super();
@@ -41,7 +41,7 @@ public class ControleurCompteGeneral {
 	}
 	
 	public void VueGeneral() {
-		VueCompte vue = new VueCompte();
+		Vue vue = new Vue();
 		System.out.println(vue.getScreenGeneral());
 		Scanner scan = new Scanner(System.in);
 		int choix = scan.nextInt();

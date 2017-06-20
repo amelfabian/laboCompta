@@ -1,16 +1,15 @@
 package be.steformations.controle;
 
 import java.util.Scanner;
-
 import be.steformations.model.Ecriture;
-import be.steformations.vue.VueCompte;
+import be.steformations.vue.Vue;
 
 public class Builder {
 
 
 	
 	public void Start(){
-		VueCompte vue = new VueCompte();
+		Vue vue = new Vue();
 		System.out.println(vue.getScreenMenu());
 		ControleurCompteGeneral cptGen = new ControleurCompteGeneral();
 		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
