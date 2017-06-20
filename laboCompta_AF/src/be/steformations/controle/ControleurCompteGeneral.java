@@ -7,6 +7,7 @@ import java.util.TreeSet;
 
 import be.steformations.Position;
 import be.steformations.model.CompteGeneral;
+import be.steformations.model.ListeComptesGenereau;
 import be.steformations.vue.VueCompte;
 
 public class ControleurCompteGeneral {
@@ -23,6 +24,8 @@ public class ControleurCompteGeneral {
 		super();
 	}
 
+
+	
 	public void VueGeneral() {
 		VueCompte vue = new VueCompte();
 		System.out.println(vue.getScreenGeneral());
@@ -85,7 +88,7 @@ public class ControleurCompteGeneral {
 		numero = sc.nextLine();
 		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
 			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
-			numero = sc.nextLine();
+			numero = sc.nextLine();}
 			while (!sub && (numero.length() < 6 || numero.length() > 1)) {
 				numero = numero + '0';
 
@@ -93,4 +96,3 @@ public class ControleurCompteGeneral {
 			cptGen.setNumero(numero);
 		}
 	}
-}

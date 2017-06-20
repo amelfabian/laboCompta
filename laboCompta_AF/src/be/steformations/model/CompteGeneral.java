@@ -7,7 +7,8 @@ import be.steformations.vue.VueCompte;
 
 public class CompteGeneral extends Compte {
 	public Scanner sc = new Scanner(System.in);
-
+	private String numero;
+	private String libelle;
 	VueCompte vue = new VueCompte();
 
 	private boolean sub;
@@ -15,26 +16,35 @@ public class CompteGeneral extends Compte {
 	private char position;
 
 	public CompteGeneral() {
-		super();
-		this.getNumero();
-		this.getLibelle();
+		this.sub=false;
+		this.position=0;
+		this.numero="";
+		this.libelle="";
+	}
+	
+	public CompteGeneral(String numero2,String libelle2, char position2){
+		this.numero = numero2;
+		this.libelle = libelle2;
+		this.position = position2;
 	}
 
 	public void creer() {
-		ControleurCompteGeneral ctrl = new ControleurCompteGeneral();
-		ctrl.subdivisable();;
+		CompteGeneral cptGen = new CompteGeneral();
+	 ControleurCompteGeneral ctrl = new ControleurCompteGeneral();
+		ctrl.subdivisable();
 		ctrl.numero();
 		ctrl.libelle();
 		ctrl.position();
-		System.out.println(vue.choix());
+		System.out.println(vue.choix(cptGen));
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
 			ListeComptesGenereau lcg = new ListeComptesGenereau();
-			lcg.addToList(numero, libelle, position, sub);
+			lcg.addToList(cptGen);
 			System.out.println("le compte a été créé avec succès.");
 		}
 
 	}
+
 
 	public void setNumero(String numero) {
 

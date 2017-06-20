@@ -2,6 +2,7 @@ package be.steformations.vue;
 
 import be.steformations.controle.ControleurCompteGeneral;
 import be.steformations.model.CompteGeneral;
+import be.steformations.model.CompteParticulier;
 
 public class VueCompte {	
 	
@@ -66,26 +67,29 @@ public class VueCompte {
 			return menu;
 		}
 		
-		public  String choix (){
+		public  String choix (CompteGeneral pCmptG){
 			menu = new StringBuilder();
-			CompteGeneral cptgen= new CompteGeneral();
 		    
 			menu.append(String.format("Vos choix :"));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Création d'un compte général."));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Numero : " + cptgen.getNumero()));
+			menu.append(String.format("\t" + "Numero : " +  pCmptG.getNumero()));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Libellé : " + cptgen.getLibelle()));
+			menu.append(String.format("\t" + "Libellé : " + pCmptG.getLibelle()));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "Position dans le bilan : " + cptgen.getPosition()));
+			menu.append(String.format("\t" + "Position dans le bilan : " + pCmptG.getPosition()));
 			menu.append(String.format(System.lineSeparator()));
-			menu.append(String.format("\t" + "subdivisible : " + cptgen.isSub()));
+			menu.append(String.format("\t" + "subdivisible : " + pCmptG.isSub()));
 			menu.append(String.format(System.lineSeparator()));
 			menu.append(String.format("Confirmer (O/N) :"));
 			return menu.toString();
 			
+		}
+		public char[] choix(CompteParticulier cptPart) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 }
 

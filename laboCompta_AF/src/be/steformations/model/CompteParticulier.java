@@ -11,23 +11,24 @@ public class CompteParticulier extends Compte {
 	public char position;
 	public String libelle = null;
 	VueCompte vue = new VueCompte();
+	CompteParticulier cptPart = new CompteParticulier();
 
 	public CompteParticulier() {
 		super();
 	}
 
 	public void creer() {
-
+	
 		Subdivise();
 		getNumero();
 		libelle();
 		getPosition();
 		VueCompte vue = new VueCompte();
-		System.out.println(vue.choix());
+		System.out.println(vue.choix(cptPart));
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
 			ListeComptesGenereau lcg = new ListeComptesGenereau();
-			lcg.addToList(numero, libelle, position, sub);
+			lcg.addToList(cptPart);
 			System.out.println("le compte a été créé avec succès.");
 		}
 	}
