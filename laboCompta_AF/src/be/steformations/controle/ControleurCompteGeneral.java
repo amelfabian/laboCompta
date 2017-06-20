@@ -27,7 +27,7 @@ public class ControleurCompteGeneral  {
 	VueCompte vue = new VueCompte();
 	System.out.println(vue.getScreenGeneral());
 	Scanner scan = new Scanner(System.in);
-	CompteGeneral cptGen = new CompteGeneral(libelle, numero);
+	CompteGeneral cptGen = new CompteGeneral();
 	int choix = scan.nextInt();
 	switch(choix){
 	case 1 : cptGen.creer();

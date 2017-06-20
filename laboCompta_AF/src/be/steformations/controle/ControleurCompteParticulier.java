@@ -13,7 +13,7 @@ public class ControleurCompteParticulier {
 	
 	public void VueParticulier() {
 		Scanner scan = new Scanner(System.in);
-		CompteParticulier cptPart = new CompteParticulier(numero, libelle);
+		CompteParticulier cptPart = new CompteParticulier();
 		VueCompte vue = new VueCompte();
 		System.out.println(vue.getScreenParticulier());
 		int choice = scan.nextInt();

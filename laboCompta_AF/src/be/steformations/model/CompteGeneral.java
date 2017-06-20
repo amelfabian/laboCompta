@@ -11,10 +11,9 @@ public class CompteGeneral extends Compte{
 	public  char position ;
 	public  String libelle= null;
 	VueCompte vue = new VueCompte();
-	public CompteGeneral(String numero,String libelle) {
-		super(numero, libelle);
-		this.numero = numero;
-		this.libelle = libelle;
+	public CompteGeneral() {
+		super();
+		
 	}
 
 	public void creer() {

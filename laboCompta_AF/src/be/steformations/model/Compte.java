@@ -1,23 +1,16 @@
 package be.steformations.model;
 
-public class Compte {
-	protected static  String numero = null;
-	protected  String libelle= null;
-	public Compte(String num,String lib){
-		this.numero = num;
-		this.setLibelle(lib);
+public abstract class Compte {
+
+	private String numero;
+	private String libelle;
+	public Compte(){
+		this.numero = null;
+		this.libelle = null;
 	}
-	public  String getLibelle() {
-		return libelle;
-	}
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-	public  String getNumero() {
-		return numero;
-	}
-	public void setNumero(String numero){
-		this.numero = numero;
-	}
+	public abstract  String getLibelle();
+	public abstract void setLibelle(String libelle);
+	public abstract  String getNumero();
+	public abstract void setNumero(String numero);
 
 }

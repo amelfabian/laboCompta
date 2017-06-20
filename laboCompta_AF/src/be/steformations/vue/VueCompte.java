@@ -68,9 +68,7 @@ public class VueCompte {
 		
 		public  String choix (){
 			menu = new StringBuilder();
-			String libelle = null;
-			String numero = null;
-			CompteGeneral cptgen= new CompteGeneral(libelle, numero);
+			CompteGeneral cptgen= new CompteGeneral();
 		    
 			menu.append(String.format("Vos choix :"));
 			menu.append(String.format(System.lineSeparator()));

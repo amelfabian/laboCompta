@@ -11,10 +11,8 @@ public class CompteParticulier  extends Compte {
 		public  char position ;
 		public  String libelle= null;
 		VueCompte vue = new VueCompte();
-		public CompteParticulier(String numero,String libelle) {
-			super(numero, libelle);
-			this.numero = numero;
-			this.libelle = libelle;
+		public CompteParticulier() {
+			super();
 		}
 		
 	public void creer() {
@@ -33,11 +31,6 @@ public class CompteParticulier  extends Compte {
 	}
 
 	private void getPosition() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private  void setPosition() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -66,6 +59,24 @@ public class CompteParticulier  extends Compte {
 
 	public  void lister() {
 		System.out.println("CompteParticulier.lister()");
+	}
+
+	@Override
+	public String getLibelle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setLibelle(String libelle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setNumero(String numero) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -4,7 +4,7 @@ public class CompteParticulierSubdivisable extends CompteParticulier {
 	public String libelle = null;
 	public String numero = null;
 	public CompteParticulierSubdivisable(String libelle, String numero) {
-			super(numero, libelle);
+			super();
 			this.libelle = libelle;
 			this.numero = numero;
 	}
