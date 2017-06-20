@@ -6,9 +6,9 @@ import be.steformations.model.CompteParticulier;
 
 public class VueCompte {	
 	
-		private  StringBuilder menu;
+		private static  StringBuilder menu;
 		
-		public StringBuilder getScreenMenu(){
+		public static StringBuilder getScreenMenu(){
 			menu = new StringBuilder();
 			menu.append(String.format("Menu"));
 			menu.append(String.format(System.lineSeparator()));
@@ -25,7 +25,7 @@ public class VueCompte {
 			return menu;
 			
 		}
-		public String getScreenGeneral() {
+		public static String getScreenGeneral() {
 			
 			menu = new StringBuilder();
 			menu.append(String.format("Menu compte"));
@@ -49,7 +49,7 @@ public class VueCompte {
 			
 		}
 		
-		public StringBuilder getScreenParticulier(){
+		public static  StringBuilder getScreenParticulier(){
 			menu = new StringBuilder();
 			menu.append(String.format(" .compte particulier"));
 			menu.append(String.format(System.lineSeparator()));
@@ -67,7 +67,7 @@ public class VueCompte {
 			return menu;
 		}
 		
-		public  String choix (CompteGeneral pCmptG){
+		public   String choix (CompteGeneral pCmptG){
 			menu = new StringBuilder();
 		    
 			menu.append(String.format("Vos choix :"));
@@ -87,7 +87,7 @@ public class VueCompte {
 			return menu.toString();
 			
 		}
-		public char[] choix(CompteParticulier cptPart) {
+		public static char[] choix(CompteParticulier cptPart) {
 			// TODO Auto-generated method stub
 			return null;
 		}

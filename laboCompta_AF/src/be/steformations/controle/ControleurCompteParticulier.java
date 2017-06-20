@@ -7,16 +7,12 @@ import be.steformations.model.CompteParticulier;
 import be.steformations.vue.VueCompte;
 
 public class ControleurCompteParticulier {
-	static Scanner sc = new Scanner(System.in);
-	public String numero;
-	public String libelle;
-
+	private Scanner sc = new Scanner(System.in);
 	public void VueParticulier() {
-		Scanner scan = new Scanner(System.in);
 		CompteParticulier cptPart = new CompteParticulier();
 		VueCompte vue = new VueCompte();
-		System.out.println(vue.getScreenParticulier());
-		int choice = scan.nextInt();
+		System.out.println(VueCompte.getScreenParticulier());
+		int choice = sc.nextInt();
 		switch (choice) {
 
 		case 1:

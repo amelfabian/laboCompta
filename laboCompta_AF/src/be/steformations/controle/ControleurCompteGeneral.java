@@ -12,11 +12,11 @@ import be.steformations.vue.VueCompte;
 
 public class ControleurCompteGeneral {
 
-	public Scanner sc = new Scanner(System.in);
-	public boolean sub = false;
-	public String numero = null;
-	public char position;
-	public String libelle = null;
+	private Scanner sc = new Scanner(System.in);
+	private boolean sub = false;
+	private String numero = null;
+	private char position;
+	private String libelle = null;
 	CompteGeneral cptGen = new CompteGeneral();
 	VueCompte vue = new VueCompte();
 
@@ -24,26 +24,39 @@ public class ControleurCompteGeneral {
 		super();
 	}
 
+	public void creer() {
+		CompteGeneral cptGen = new CompteGeneral();
+		subdivisable();
+		numero();
+		libelle();
+		position();
+		System.out.println(vue.choix(cptGen));
+		char confirme = sc.nextLine().charAt(0);
+		if (confirme == 'O') {
+			ListeComptesGenereau lcg = new ListeComptesGenereau();
+			lcg.addToList(cptGen);
+			System.out.println("le compte a été créé avec succès.");
+		}
 
+	}
 	
 	public void VueGeneral() {
 		VueCompte vue = new VueCompte();
 		System.out.println(vue.getScreenGeneral());
 		Scanner scan = new Scanner(System.in);
-		CompteGeneral cptGen = new CompteGeneral();
 		int choix = scan.nextInt();
 		switch (choix) {
 		case 1:
-			cptGen.creer();
+			creer();
 			break;
 		case 2:
-			cptGen.modifier();
+			modifier();
 			break;
 		case 3:
-			cptGen.supprimer();
+			supprimer();
 			break;
 		case 4:
-			cptGen.lister();
+			lister();
 			break;
 		}
 
@@ -71,16 +84,16 @@ public class ControleurCompteGeneral {
 
 	public void subdivisable() {
 		System.out.println("Le compte doit-il être subdivisé (O/N) ? :");
-		Character tmp = sc.nextLine().charAt(0);
-		while (!((Character.toUpperCase(tmp) == 'O') || (Character.toUpperCase(tmp) == 'N'))) {
+		Character sub = sc.nextLine().charAt(0);
+
+		while ((Character.toUpperCase(sub) != 'O') && (Character.toUpperCase(sub) != 'N')) {
 			System.out.println("(O/N) ? :");
-			tmp = sc.nextLine().charAt(0);
+			sub = sc.nextLine().charAt(0);
 
 		}
-		if (tmp == 'o' || tmp == 'O') {
-			sub = true;
+		if (sub == 'o' || sub == 'O') {
+		cptGen.setSub(true);
 		}
-		cptGen.setSub(sub);
 	}
 
 	public void numero() {
@@ -88,11 +101,22 @@ public class ControleurCompteGeneral {
 		numero = sc.nextLine();
 		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
 			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
-			numero = sc.nextLine();}
-			while (!sub && (numero.length() < 6 || numero.length() > 1)) {
-				numero = numero + '0';
-
+			numero = sc.nextLine();
 			}
-			cptGen.setNumero(numero);
+		while (!sub && (numero.length() < 6 )) {
+				numero = numero + '0';
+			}
+		cptGen.setNumero(numero);
 		}
+	public void lister() {
+		System.out.println("ControleurCompteGeneral.lister()");
+	}
+
+	public void supprimer() {
+		System.out.println("ControleurCompteGeneral.supprimer()");
+	}
+
+	public void modifier() {
+		System.out.println("ControleurCompteGeneral.modifier()");
+	}
 	}
