@@ -17,11 +17,11 @@ public class ListeComptesGeneraux {
 		char position = cmpt.getPosition();
 		boolean sub = cmpt.isSub();
 
-		boolean present = false;
+		boolean ajouter = false;
 
-		present = compteGeneral.containsKey(numero);
+		ajouter = ! compteGeneral.containsKey(numero);
 
-		if (!(present)) {
+		if (ajouter) {
 			if (sub && numero.length() < 6) {
 				CompteGeneral cpt = new GeneralSubdivisable(numero, libelle, position, sub);
 				compteGeneral.put(numero, cpt);
@@ -34,7 +34,7 @@ public class ListeComptesGeneraux {
 				compteGeneral.put(numero, cpt);
 			}
 		}
-		return present;
+		return ajouter;
 	}
 
 	public boolean addToList(CompteParticulier cmptP) {
