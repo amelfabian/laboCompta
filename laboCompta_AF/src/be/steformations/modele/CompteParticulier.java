@@ -11,14 +11,13 @@ public class CompteParticulier extends Compte {
 	public char position;
 	public String libelle = null;
 	Vue vue = new Vue();
-	CompteParticulier cptPart = new CompteParticulier();
 
 	public CompteParticulier() {
 		super();
 	}
 
 	public void creer() {
-	
+		CompteParticulier cptPart = new CompteParticulier();
 		Subdivise();
 		getNumero();
 		libelle();
@@ -27,13 +26,13 @@ public class CompteParticulier extends Compte {
 		System.out.println(vue.AfficheCompteAvantConfirmerCp(cptPart));
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
-			ListeComptesGenereau lcg = new ListeComptesGenereau();
+			ListeComptesGeneraux lcg = new ListeComptesGeneraux();
 			lcg.addToList(cptPart);
 			System.out.println("le compte a été créé avec succès.");
 		}
 	}
 
-	 char getPosition() {
+	public char getPosition() {
 		return position;
 		// TODO Auto-generated method stub
 
@@ -86,6 +85,11 @@ public class CompteParticulier extends Compte {
 	public boolean isSub() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public String getComptGenSub() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

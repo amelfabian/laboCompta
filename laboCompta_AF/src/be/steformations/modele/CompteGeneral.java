@@ -13,21 +13,20 @@ public class CompteGeneral extends Compte {
 	private char position;
 
 	public CompteGeneral() {
-		this.sub=false;
-		this.position=0;
-		this.numero="";
-		this.libelle="";
+		this.sub = false;
+		this.position = 0;
+		this.numero = "";
+		this.libelle = "";
 	}
-	
-	public CompteGeneral(String numero2,String libelle2, char position2){
+
+	public CompteGeneral(String numero2, String libelle2, char position2) {
 		this.numero = numero2;
 		this.libelle = libelle2;
 		this.position = position2;
 	}
 
-
 	public void setNumero(String numero) {
-		
+
 		this.numero = numero;
 	}
 
@@ -63,7 +62,5 @@ public class CompteGeneral extends Compte {
 
 		this.sub = sub;
 	}
-
-
 
 }

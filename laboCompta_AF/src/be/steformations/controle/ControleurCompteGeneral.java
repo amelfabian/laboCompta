@@ -3,7 +3,7 @@ package be.steformations.controle;
 import java.util.Scanner;
 
 import be.steformations.modele.CompteGeneral;
-import be.steformations.modele.ListeComptesGenereau;
+import be.steformations.modele.ListeComptesGeneraux;
 import be.steformations.vue.Vue;
 
 public class ControleurCompteGeneral {
@@ -11,7 +11,7 @@ public class ControleurCompteGeneral {
 	private Scanner sc = new Scanner(System.in);
 	private CompteGeneral cmpt;
 	private Vue vue = new Vue();
-	private ListeComptesGenereau listeCG = new ListeComptesGenereau();
+	private ListeComptesGeneraux listeCG = new ListeComptesGeneraux();
 
 	public void creer() {
 		cmpt = new CompteGeneral();

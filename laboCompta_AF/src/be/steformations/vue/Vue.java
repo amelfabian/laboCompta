@@ -22,6 +22,7 @@ public class Vue {
 		return menu.toString();
 
 	}
+	
 
 	public String getScreenGeneral() {
 		menu = new StringBuilder();
@@ -82,14 +83,26 @@ public class Vue {
 	}
 
 	public String AfficheCompteAvantConfirmerCp(CompteParticulier CmptP) {
-		String string = null;
-		System.out.println("Vue.AfficheCompteAvantConfirmerCp()");
-		return string;
+		menu = new StringBuilder();
+		menu.append(String.format("Vos choix :"));
+		menu.append(String.format(System.lineSeparator()));
+		menu.append(String.format("Création d'un compte Particulier."));
+		menu.append(String.format(System.lineSeparator()));
+		menu.append(String.format("\t" + "Compte choisi : " + CmptP.getComptGenSub()));
+		menu.append(String.format(System.lineSeparator()));
+		menu.append(String.format("\t" + "numero : " + CmptP.getNumero()));
+		menu.append(String.format(System.lineSeparator()));
+		menu.append(String.format("\t" + "libelle : " + CmptP.getLibelle()));
+		menu.append(String.format(System.lineSeparator()));
+		menu.append(String.format("\t" + "subdivisible : " + CmptP.isSub()));
+		menu.append(String.format(System.lineSeparator()));
+		menu.append(String.format("Confirmer (O/N) :"));
+		return menu.toString();
 	}
 
 	public void getScreenEcriture() {
 		System.out.println("Vue.getScreenEcriture()");
-		
+
 	}
 
 }
