@@ -6,15 +6,17 @@ import be.steformations.vue.Vue;
 public class Builder {
 	int choixMenuG = 0;
 	int choixMenuP = 0;
-
+	char continuer = 'O';
+	Scanner sc = new Scanner(System.in);
+	Vue vue = new Vue();
+	
 	public void Start() {
-		Vue vue = new Vue();
-		System.out.println(vue.getScreenMenu());
 		ControleurCompteGeneral ctrlCG = new ControleurCompteGeneral();
 		ControleurCompteParticulier cptPart = new ControleurCompteParticulier();
-		Character sub = 'O';
-		while (Character.toUpperCase(sub) == 'O') {
-			Scanner sc = new Scanner(System.in);
+
+		while (Character.toUpperCase(continuer) == 'O') {
+		Vue vue = new Vue();
+		System.out.println(vue.getScreenMenu());
 			int choix = Integer.parseInt(sc.nextLine());
 			switch (choix) {
 			case 1:
@@ -51,8 +53,8 @@ public class Builder {
 			}
 
 			System.out.println("Continuer (O/N) ? :");
-			sub = sc.nextLine().charAt(0);
+			continuer = sc.nextLine().charAt(0);
 		}
-
+		System.out.println("Au revoir.");
 	}
 }

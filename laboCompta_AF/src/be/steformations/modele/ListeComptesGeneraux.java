@@ -4,8 +4,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
+import be.steformations.vue.Vue;
+
 public class ListeComptesGeneraux {
 	private HashMap<String, CompteGeneral> compteGeneral;
+	
+	private Vue vue = new Vue();
 
 	public ListeComptesGeneraux() {
 		this.compteGeneral = new HashMap<>();
@@ -17,14 +21,22 @@ public class ListeComptesGeneraux {
 		char position = cmpt.getPosition();
 		boolean sub = cmpt.isSub();
 
-		boolean ajouter = false;
+		boolean ajoutOK = false;
+		ajoutOK = compteGeneral.containsKey(numero);
+		
 
-		ajouter = ! compteGeneral.containsKey(numero);
-
-		if (ajouter) {
+		/*
+		 * Iterator it = compteGeneral.keySet().iterator(); while
+		 * (it.hasNext()){ if ()
+		 * 
+		 * }
+		 */
+		if (!(ajoutOK)) {
 			if (sub && numero.length() < 6) {
+				
 				CompteGeneral cpt = new GeneralSubdivisable(numero, libelle, position, sub);
 				compteGeneral.put(numero, cpt);
+				System.out.println("Taille de map après ajout: "+ compteGeneral.size());
 				
 			} else if (sub && numero.length() == 6) {
 				CompteGeneral cpt = new GeneralSubdivisabkeParticulier(numero, libelle, position, sub);
@@ -34,13 +46,24 @@ public class ListeComptesGeneraux {
 				compteGeneral.put(numero, cpt);
 			}
 		}
-		return ajouter;
+		return ajoutOK;
+	}
+	
+	public void afficheLigne(CompteGeneral cmpt) {
+		String numeroDouble = cmpt.getNumero();
+		
+		cmpt = compteGeneral.get(numeroDouble);
+		vue.AfficheCompteAvantConfirmerCg(cmpt);
+		
 	}
 
-	public boolean addToList(CompteParticulier cmptP) {
-
-		return false;
-
+	public void addToList(CompteParticulier cptPart) {
+		// TODO Auto-generated method stub
+		
 	}
 
+	public int size() {
+		// TODO Auto-generated method stub
+		return compteGeneral.size();
+	}
 }

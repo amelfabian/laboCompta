@@ -44,12 +44,7 @@ public class ControleurCompteParticulier {
 		System.out.println(vue.AfficheCompteAvantConfirmerCp(comptP));
 		Character confirme = sc.nextLine().charAt(0);
 		if (Character.toUpperCase(confirme) == 'O') {
-			if (!(listeCG.addToList(comptP))) {
-				System.out.println("le compte a été créé avec succès.");
-			} else {
-				System.out.println("désolé");
-				
-			}
+			
 
 		}
 		
